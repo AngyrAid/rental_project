@@ -1,0 +1,15 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>My bookings</title></head> 
+<body> 
+<h1>My bookings</h1> 
+<ul> 
+{% for b in bookings %} 
+<li>Booking #{{ b.id }} - {{ b.equipment.name }} ({{ b.start_date }} - {{ b.end_date }}). Status: {{ b.get_status_display }}</li> 
+{% empty %} 
+<li>No bookings yet</li> 
+{% endfor %} 
+</ul> 
+<a href="/">Back to catalog</a> 
+</body> 
+</html> 
